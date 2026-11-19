@@ -1,0 +1,14 @@
+[gd_resource type="TileSet" format=3 uid="uid://ba2fifkvtjx7s"]
+
+[ext_resource type="Texture2D" uid="uid://cccb8gfc08717" path="res://tileset/prototype_tilemap.svg" id="1_6kr75"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hc3k4"]
+texture = ExtResource("1_6kr75")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+
+[resource]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_hc3k4")
