@@ -40,3 +40,18 @@ offset_bottom = -33.600006
 grow_horizontal = 2
 grow_vertical = 2
 text = "Play"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control" unique_id=1414320398]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.42000002
+anchor_right = 0.5
+anchor_bottom = 0.42000002
+offset_left = -117.0
+offset_top = 2.399994
+offset_right = 129.0
+offset_bottom = 70.399994
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits"
