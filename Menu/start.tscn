@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://crbdkkkci1kvq"]
 
+[ext_resource type="Script" uid="uid://dfgup0frscvql" path="res://scripts/start.gd" id="1_rwymk"]
+
 [node name="Control" type="Control" unique_id=49433710]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rwymk")
 
 [node name="Label" type="Label" parent="." unique_id=1787206621]
 layout_mode = 1
