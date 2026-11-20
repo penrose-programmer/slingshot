@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://crbdkkkci1kvq"]
+
+[ext_resource type="Script" uid="uid://btexwnnd5syx3" path="res://scenes/ui/main_menu.gd" id="1_sl1te"]
+
+[node name="MainMenu" type="MarginContainer" unique_id=138268478 node_paths=PackedStringArray("play_button", "credits_button")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 256
+script = ExtResource("1_sl1te")
+play_button = NodePath("HBoxContainer/VBoxContainer/VBoxContainer/Play")
+credits_button = NodePath("HBoxContainer/VBoxContainer/VBoxContainer/Credits")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=738985054]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1084735074]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1787206621]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 128
+text = "Slingshot"
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=494302396]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Play" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1801904522]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Play"
+metadata/_edit_use_anchors_ = true
+
+[node name="Credits" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1414320398]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Credits"
+metadata/_edit_use_anchors_ = true

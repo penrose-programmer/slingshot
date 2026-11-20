@@ -1,11 +1,24 @@
 [gd_scene format=3 uid="uid://crf18nsaecb7f"]
 
-[ext_resource type="PackedScene" uid="uid://dia1berynth6c" path="res://player/player.tscn" id="1_pq8q7"]
+[ext_resource type="Script" uid="uid://cxgrvc7w67vh7" path="res://autoload/root.gd" id="1_pq8q7"]
 
-[node name="Root" type="Node2D" unique_id=678282895]
+[node name="Root" type="Node2D" unique_id=678282895 node_paths=PackedStringArray("world", "ui", "transition")]
+script = ExtResource("1_pq8q7")
+world = NodePath("World")
+ui = NodePath("UI")
+transition = NodePath("Transition/TransitionRect")
 
-[node name="Player" parent="." unique_id=1370682223 groups=["player"] instance=ExtResource("1_pq8q7")]
+[node name="World" type="Node2D" parent="." unique_id=1235557650]
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=740615033]
-zoom = Vector2(0.1, 0.1)
-position_smoothing_enabled = true
+[node name="UI" type="CanvasLayer" parent="." unique_id=113690549]
+
+[node name="Transition" type="CanvasLayer" parent="." unique_id=133952187]
+
+[node name="TransitionRect" type="ColorRect" parent="Transition" unique_id=1437637671]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

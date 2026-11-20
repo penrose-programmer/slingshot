@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://hqukgcykdupw"]
+
+[ext_resource type="Script" uid="uid://igp728cvikyp" path="res://scenes/ui/level_select_menu.gd" id="1_nwrh7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nwrh7"]
+font_size = 128
+font_color = Color(0, 0, 0, 1)
+
+[node name="LevelSelectMenu" type="MarginContainer" unique_id=1559340126 node_paths=PackedStringArray("return_button", "level_grid")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 64
+script = ExtResource("1_nwrh7")
+return_button = NodePath("HBoxContainer/VBoxContainer/VBoxContainer/Return")
+level_grid = NodePath("HBoxContainer/VBoxContainer/VBoxContainer/LevelGrid")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=552291752]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1773982091]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1798332290]
+layout_mode = 2
+text = "Levels"
+label_settings = SubResource("LabelSettings_nwrh7")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=509950321]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="LevelGrid" type="GridContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=400717162]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+columns = 5
+
+[node name="1" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer/LevelGrid" unique_id=1801904522]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="2" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer/LevelGrid" unique_id=1414320398]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "2"
+metadata/_edit_use_anchors_ = true
+
+[node name="3" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer/LevelGrid" unique_id=2104059510]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "3"
+metadata/_edit_use_anchors_ = true
+
+[node name="4" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer/LevelGrid" unique_id=484728797]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "4"
+metadata/_edit_use_anchors_ = true
+
+[node name="5" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer/LevelGrid" unique_id=1840569001]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "5"
+metadata/_edit_use_anchors_ = true
+
+[node name="6" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer/LevelGrid" unique_id=471878565]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "6"
+metadata/_edit_use_anchors_ = true
+
+[node name="7" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer/LevelGrid" unique_id=1152574354]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "7"
+metadata/_edit_use_anchors_ = true
+
+[node name="8" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer/LevelGrid" unique_id=1393489577]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "8"
+metadata/_edit_use_anchors_ = true
+
+[node name="9" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer/LevelGrid" unique_id=874349894]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "9"
+metadata/_edit_use_anchors_ = true
+
+[node name="10" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer/LevelGrid" unique_id=2017434403]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "10"
+metadata/_edit_use_anchors_ = true
+
+[node name="11" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer/LevelGrid" unique_id=1029069976]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "11"
+metadata/_edit_use_anchors_ = true
+
+[node name="12" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer/LevelGrid" unique_id=1895606894]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "12"
+metadata/_edit_use_anchors_ = true
+
+[node name="13" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer/LevelGrid" unique_id=282098209]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "13"
+metadata/_edit_use_anchors_ = true
+
+[node name="14" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer/LevelGrid" unique_id=846573482]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "14"
+metadata/_edit_use_anchors_ = true
+
+[node name="15" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer/LevelGrid" unique_id=1554987509]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "15"
+metadata/_edit_use_anchors_ = true
+
+[node name="Return" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1470354676]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Return"

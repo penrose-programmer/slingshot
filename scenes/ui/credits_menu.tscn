@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://ekbccpca54xb"]
+
+[ext_resource type="Script" uid="uid://cgw6nguec170p" path="res://scenes/ui/credits_menu.gd" id="1_c6vh4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oap8i"]
+font_size = 128
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gcfse"]
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="CenterContainer" unique_id=1128154883 node_paths=PackedStringArray("return_button")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c6vh4")
+return_button = NodePath("VBoxContainer/VBoxContainer2/Return")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1749489148]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1734472632]
+layout_mode = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_oap8i")
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" unique_id=566070905]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=1687904516]
+layout_mode = 2
+
+[node name="Penrose" type="Label" parent="VBoxContainer/VBoxContainer2/VBoxContainer3" unique_id=227052629]
+layout_mode = 2
+text = "Penrose: Lead Developer"
+label_settings = SubResource("LabelSettings_gcfse")
+
+[node name="Atomic" type="Label" parent="VBoxContainer/VBoxContainer2/VBoxContainer3" unique_id=1923163774]
+layout_mode = 2
+text = "Atomic: Supporting Developer"
+label_settings = SubResource("LabelSettings_gcfse")
+
+[node name="Hystoria" type="Label" parent="VBoxContainer/VBoxContainer2/VBoxContainer3" unique_id=1868745487]
+layout_mode = 2
+text = "Hystoria: Lead Artist"
+label_settings = SubResource("LabelSettings_gcfse")
+
+[node name="Return" type="Button" parent="VBoxContainer/VBoxContainer2" unique_id=490821366]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Return"
