@@ -73,3 +73,5 @@ visible = false
 position = Vector2(256, 0)
 scale = Vector2(1, 32)
 texture = SubResource("GradientTexture1D_g1dw6")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1721241199]

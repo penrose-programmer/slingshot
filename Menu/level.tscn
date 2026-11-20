@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hqukgcykdupw"]
 
-[ext_resource type="Script" uid="uid://dfgup0frscvql" path="res://scripts/start.gd" id="1_vjr8n"]
+[ext_resource type="Script" uid="uid://pdsyi5sewmi7" path="res://scripts/level.gd" id="1_vjr8n"]
 
 [node name="Control" type="Control" unique_id=49433710]
 layout_mode = 3
@@ -36,7 +36,7 @@ anchor_bottom = 0.5
 offset_left = -800.5
 offset_top = -137.0
 offset_right = 800.5
-offset_bottom = 411.0
+offset_bottom = 278.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 16
@@ -83,4 +83,54 @@ theme_override_font_sizes/font_size = 32
 text = "Level 5"
 metadata/_edit_use_anchors_ = true
 
+[node name="GridContainer" type="GridContainer" parent="." unique_id=501789512]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 852.0
+offset_right = 1763.0
+offset_bottom = 905.0
+theme_override_constants/h_separation = 16
+columns = 5
+
+[node name="1" type="Button" parent="GridContainer" unique_id=937947871]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Play"
+metadata/_edit_use_anchors_ = true
+
+[node name="2" type="Button" parent="GridContainer" unique_id=710157108]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Play"
+metadata/_edit_use_anchors_ = true
+
+[node name="3" type="Button" parent="GridContainer" unique_id=1464543645]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Play"
+metadata/_edit_use_anchors_ = true
+
+[node name="4" type="Button" parent="GridContainer" unique_id=921818548]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Play"
+metadata/_edit_use_anchors_ = true
+
+[node name="5" type="Button" parent="GridContainer" unique_id=490025933]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Play"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Grid/1" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="GridContainer/1" to="." method="_on__pressed"]

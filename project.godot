@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Slingshot"
-run/main_scene="uid://crf18nsaecb7f"
+run/main_scene="uid://crbdkkkci1kvq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://cir8mq8mtqe8l"
 
