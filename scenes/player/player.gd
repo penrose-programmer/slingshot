@@ -20,7 +20,7 @@ const RESPAWN: String = "Respawn" # Death => Normal
 
 @export_category("Params")
 @export var launch_power: float = 3000.0
-@export var cooldown_duration: float = 1.0
+@export var cooldown_duration: float = 1.5
 @export var gravity: float = 3000.0
 @export var bounce_strength: float = 0.9
 
@@ -30,6 +30,7 @@ var launch_dir: Vector2 = Vector2.UP
 func _ready():
 	_init_state_machine()
 	hitbox.body_entered.connect(on_hitbox_body_entered)
+	hitbox.area_entered.connect(on_hitbox_area_entered)
 
 func _init_state_machine():
 	hsm = LimboHSM.new()
@@ -72,11 +73,15 @@ func default_update(delta: float):
 		cooldown_time = cooldown_duration
 
 func launch_enter():
+	Engine.time_scale = 0.25
 	cooldown_bar.hide()
 	launch_arrow.show()
 
 func launch_update(delta: float):
-	velocity = lerp(velocity, Vector2.ZERO, 0.1)
+	velocity.y += gravity * delta
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		velocity = velocity.bounce(collision.get_normal()) * bounce_strength
 	move_and_slide()
 	
 	var mouse_pos = get_global_mouse_position()
@@ -87,6 +92,7 @@ func launch_update(delta: float):
 		hsm.dispatch(RELEASE)
 
 func launch_exit():
+	Engine.time_scale = 1.0
 	velocity = launch_dir * launch_power
 	cooldown_bar.show()
 	launch_arrow.hide()
@@ -94,3 +100,7 @@ func launch_exit():
 func on_hitbox_body_entered(body: Node2D):
 	if body.is_in_group("goal"):
 		GameManager.level_complete.emit()
+
+func on_hitbox_area_entered(area: Area2D):
+	if area.is_in_group("hazard"):
+		GameManager.player_death.emit()

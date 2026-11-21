@@ -20,8 +20,9 @@ var current_scene: Node
 var busy: bool = false
 
 func _ready():
-	refresh_levels()
 	GameManager.level_complete.connect(next_level)
+	GameManager.player_death.connect(restart_level)
+	refresh_levels()
 
 func register(p_world: Node2D, p_ui: CanvasLayer, p_transition: ColorRect) -> void:
 	world_layer = p_world
@@ -88,12 +89,14 @@ func refresh_levels() -> void:
 		return a.naturalnocasecmp_to(b) < 0)
 
 func load_level(index: int) -> void:
-	clear_scene(ui_layer)
 	if index > levels.size() - 1:
 		return
-	change_scene(world_layer, load(levels[index]), MAIN_TRANSITION)
+	clear_scene(ui_layer)
+	await change_scene(world_layer, load(levels[index]), MAIN_TRANSITION)
 	current_index = index
+
+func restart_level() -> void:
+	load_level(current_index)
 
 func next_level() -> void:
 	load_level(current_index + 1)
-	print(current_index)
