@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://snx54y47hpq5"]
 
 [ext_resource type="PackedScene" uid="uid://dia1berynth6c" path="res://scenes/player/player.tscn" id="1_0ljxa"]
+[ext_resource type="Texture2D" uid="uid://b84nodsydstt3" path="res://assets/backgroundpic.png" id="1_hldbq"]
 [ext_resource type="TileSet" uid="uid://ba2fifkvtjx7s" path="res://tileset/prototype_tileset.tres" id="2_0qepi"]
 [ext_resource type="Texture2D" uid="uid://cccb8gfc08717" path="res://tileset/prototype_tilemap.svg" id="3_fi56y"]
 [ext_resource type="PackedScene" uid="uid://cwuic51hus84l" path="res://goal.tscn" id="3_fmg3e"]
@@ -19,6 +20,14 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hldbq")
 
 [node name="Level4" type="Node2D" unique_id=1322564777]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1608154812]
+offset_left = -33162.0
+offset_top = -26417.0
+offset_right = 56058.0
+offset_bottom = 50524.0
+texture = ExtResource("1_hldbq")
+stretch_mode = 1
 
 [node name="Player" parent="." unique_id=1370682223 instance=ExtResource("1_0ljxa")]
 
@@ -59,7 +68,7 @@ position = Vector2(5000, -1400)
 position = Vector2(4760, -1400)
 
 [node name="Spike15" parent="SpikeContainer" unique_id=1098909634 instance=ExtResource("4_0qepi")]
-position = Vector2(4473, -2939)
+position = Vector2(3943, -2939)
 
 [node name="Spike16" parent="SpikeContainer" unique_id=1968799442 instance=ExtResource("4_0qepi")]
 position = Vector2(7616, -1148)
@@ -74,7 +83,7 @@ position = Vector2(10929, -2938)
 position = Vector2(10689, -2938)
 
 [node name="Spike20" parent="SpikeContainer" unique_id=593294784 instance=ExtResource("4_0qepi")]
-position = Vector2(10091, -4466)
+position = Vector2(9581, -4462)
 
 [node name="Spike21" parent="SpikeContainer" unique_id=766412654 instance=ExtResource("4_0qepi")]
 position = Vector2(9339, -4464)
