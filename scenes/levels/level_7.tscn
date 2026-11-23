@@ -38,7 +38,7 @@ tile_set = ExtResource("3_posk4")
 
 [node name="OneWay" type="TileMapLayer" parent="." unique_id=100961064]
 modulate = Color(1, 1, 1, 0.2509804)
-tile_map_data = PackedByteArray("AAAOAPv/AAAAAAAAAAAPAPv/AAAAAAAAAAAQAPv/AAAAAAAAAAARAPv/AAAAAAAAAAASAPv/AAAAAAAAAAATAPv/AAAAAAAAAAAOAPX/AAAAAAAAAAAPAPX/AAAAAAAAAAAQAPX/AAAAAAAAAAARAPX/AAAAAAAAAAASAPX/AAAAAAAAAAATAPX/AAAAAAAAAAAkAPX/AAAAAAAAAAAlAPX/AAAAAAAAAAAmAPX/AAAAAAAAAAAnAPX/AAAAAAAAAAAoAPX/AAAAAAAAAAAoAO//AAAAAAAAAAApAO//AAAAAAAAAAAqAO//AAAAAAAAAAArAO//AAAAAAAAAAAnAO//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAAcAAQAAAAAAAAAAAAdAAQAAAAAAAAAAAAeAAQAAAAAAAAAAAAfAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAhAAQAAAAAAAAAAAAiAAQAAAAAAAAAAAAcAP7/AAAAAAAAAAAdAP7/AAAAAAAAAAAeAP7/AAAAAAAAAAAhAPr/AAAAAAAAAAAgAPr/AAAAAAAAAAAfAPr/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAOAPv/AAAAAAAAAAAPAPv/AAAAAAAAAAAQAPv/AAAAAAAAAAARAPv/AAAAAAAAAAASAPv/AAAAAAAAAAATAPv/AAAAAAAAAAAnAO//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAAcAAQAAAAAAAAAAAAdAAQAAAAAAAAAAAAeAAQAAAAAAAAAAAAfAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAhAAQAAAAAAAAAAAAiAAQAAAAAAAAAAAAcAP7/AAAAAAAAAAAdAP7/AAAAAAAAAAAeAP7/AAAAAAAAAAAhAPr/AAAAAAAAAAAgAPr/AAAAAAAAAAAfAPr/AAAAAAAAAAAoAPP/AAAAAAAAAAApAPP/AAAAAAAAAAAqAPP/AAAAAAAAAAArAPP/AAAAAAAAAAAsAPP/AAAAAAAAAAAtAPP/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_fsnos")
 
 [node name="Goal" parent="." unique_id=1741165136 instance=ExtResource("5_q0wsq")]
@@ -55,28 +55,28 @@ position = Vector2(1664, 896)
 position = Vector2(1920, 896)
 
 [node name="Spike6" parent="SpikeContainer" unique_id=1997192183 instance=ExtResource("6_ivh0c")]
-position = Vector2(4224, 896)
+position = Vector2(6758, 2437)
 
 [node name="Spike7" parent="SpikeContainer" unique_id=252668334 instance=ExtResource("6_ivh0c")]
 position = Vector2(4734, 390)
 
 [node name="Spike12" parent="SpikeContainer" unique_id=1798366721 instance=ExtResource("6_ivh0c")]
-position = Vector2(3705, -2939)
+position = Vector2(4728, 2439)
 
 [node name="Spike13" parent="SpikeContainer" unique_id=1058902919 instance=ExtResource("6_ivh0c")]
-position = Vector2(5000, -1400)
+position = Vector2(8590, -626)
 
 [node name="Spike14" parent="SpikeContainer" unique_id=1337188076 instance=ExtResource("6_ivh0c")]
 position = Vector2(4003, -377)
 
 [node name="Spike15" parent="SpikeContainer" unique_id=1098909634 instance=ExtResource("6_ivh0c")]
-position = Vector2(3943, -2939)
+position = Vector2(4966, 2439)
 
 [node name="Spike16" parent="SpikeContainer" unique_id=1968799442 instance=ExtResource("6_ivh0c")]
-position = Vector2(7616, -1148)
+position = Vector2(7528, -1652)
 
 [node name="Spike17" parent="SpikeContainer" unique_id=921503923 instance=ExtResource("6_ivh0c")]
-position = Vector2(7376, -1148)
+position = Vector2(7288, -1652)
 
 [node name="Spike18" parent="SpikeContainer" unique_id=787262391 instance=ExtResource("6_ivh0c")]
 position = Vector2(12400, -2677)
@@ -91,7 +91,7 @@ position = Vector2(13955, -2679)
 position = Vector2(13713, -2681)
 
 [node name="Spike8" parent="SpikeContainer" unique_id=1266623803 instance=ExtResource("6_ivh0c")]
-position = Vector2(6533, -4986)
+position = Vector2(10417, -1661)
 
 [node name="Spike9" parent="SpikeContainer" unique_id=1558634450 instance=ExtResource("6_ivh0c")]
-position = Vector2(6789, -4986)
+position = Vector2(10673, -1661)
