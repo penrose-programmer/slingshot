@@ -66,9 +66,6 @@ position = Vector2(4728, 2439)
 [node name="Spike13" parent="SpikeContainer" unique_id=1058902919 instance=ExtResource("6_ivh0c")]
 position = Vector2(8590, -626)
 
-[node name="Spike14" parent="SpikeContainer" unique_id=1337188076 instance=ExtResource("6_ivh0c")]
-position = Vector2(4003, -377)
-
 [node name="Spike15" parent="SpikeContainer" unique_id=1098909634 instance=ExtResource("6_ivh0c")]
 position = Vector2(4966, 2439)
 

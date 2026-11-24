@@ -40,7 +40,7 @@ position = Vector2(3202, -904)
 rotation = 3.1415927
 
 [node name="Spike7" parent="SpikeContainer" unique_id=252668334 instance=ExtResource("4_0qepi")]
-position = Vector2(5270, 905)
+position = Vector2(5433, -371)
 
 [node name="Spike12" parent="SpikeContainer" unique_id=1798366721 instance=ExtResource("4_0qepi")]
 position = Vector2(6784, 896)
@@ -67,7 +67,7 @@ position = Vector2(4821, 5256)
 position = Vector2(7539, 1416)
 
 [node name="Spike20" parent="SpikeContainer" unique_id=1143476053 instance=ExtResource("4_0qepi")]
-position = Vector2(8585, 132)
+position = Vector2(7297, 137)
 
 [node name="Spike21" parent="SpikeContainer" unique_id=562451067 instance=ExtResource("4_0qepi")]
 position = Vector2(4221, 3721)
