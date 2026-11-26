@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cb785823wrmho" path="res://scenes/spike/spike.svg" id="1_l5oik"]
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_l5oik"]
-points = PackedVector2Array(-277, 63, -35, 63, -155, -180)
+[sub_resource type="CircleShape2D" id="CircleShape2D_l5oik"]
+radius = 76.02631
 
 [node name="Spike" type="Area2D" unique_id=1968799442 groups=["hazard"]]
 
@@ -11,5 +11,5 @@ points = PackedVector2Array(-277, 63, -35, 63, -155, -180)
 texture = ExtResource("1_l5oik")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265037235]
-position = Vector2(155, 59)
-shape = SubResource("ConvexPolygonShape2D_l5oik")
+position = Vector2(0, 46)
+shape = SubResource("CircleShape2D_l5oik")

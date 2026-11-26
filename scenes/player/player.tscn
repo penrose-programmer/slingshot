@@ -2,6 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://cir8mq8mtqe8l" path="res://scenes/player/player_sprite.svg" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://dfjtaa7ynvv11" path="res://scenes/player/player.gd" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://1ajftme1mqgc" path="res://scenes/player/arrow.svg" id="2_gmlin"]
+[ext_resource type="AudioStream" uid="uid://b3ci0xuw016b2" path="res://assets/Release.wav" id="4_0owmy"]
+[ext_resource type="AudioStream" uid="uid://bfgioyq2kc6o0" path="res://assets/Launch.wav" id="4_lvxji"]
+[ext_resource type="AudioStream" uid="uid://ddpfailgk3h6f" path="res://assets/Collide.wav" id="5_p47bc"]
+[ext_resource type="AudioStream" uid="uid://dswt0q7xijqa6" path="res://assets/Win.wav" id="6_75vfm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pyidc"]
+radius = 129.0155
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pq8q7"]
+radius = 135.03333
 
 [sub_resource type="Gradient" id="Gradient_g1dw6"]
 interpolation_mode = 1
@@ -16,24 +27,37 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
 metadata/_snap_enabled = true
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pyidc"]
-radius = 129.0155
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_pq8q7"]
-radius = 135.03333
-
-[sub_resource type="Gradient" id="Gradient_rkbax"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_g1dw6"]
-gradient = SubResource("Gradient_rkbax")
-
-[node name="Player" type="CharacterBody2D" unique_id=1370682223 node_paths=PackedStringArray("hitbox", "launch_anchor", "launch_arrow", "cooldown_bar")]
+[node name="Player" type="CharacterBody2D" unique_id=1370682223 node_paths=PackedStringArray("hitbox", "launch_anchor", "launch_arrow", "cooldown_bar", "launch_sfx", "release_sfx", "collide_sfx", "win_sfx", "camera")]
 script = ExtResource("1_rkbax")
 hitbox = NodePath("Hitbox")
 launch_anchor = NodePath("LaunchAnchor")
 launch_arrow = NodePath("LaunchAnchor/Arrow")
 cooldown_bar = NodePath("CooldownProgress")
+launch_sfx = NodePath("Launch")
+release_sfx = NodePath("Release")
+collide_sfx = NodePath("Collide")
+win_sfx = NodePath("Win")
+camera = NodePath("Camera2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=277333865]
+shape = SubResource("CircleShape2D_pyidc")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1678425107]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=2126041187]
+shape = SubResource("CircleShape2D_pq8q7")
+
+[node name="LaunchAnchor" type="Node2D" parent="." unique_id=732655041]
+
+[node name="Arrow" type="Sprite2D" parent="LaunchAnchor" unique_id=1041077544]
+visible = false
+modulate = Color(0.4, 0.49803922, 1, 1)
+position = Vector2(256, 0)
+texture = ExtResource("2_gmlin")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1721241199]
+zoom = Vector2(0.15, 0.15)
+position_smoothing_enabled = true
 
 [node name="CooldownProgress" type="TextureProgressBar" parent="." unique_id=1831701200]
 anchors_preset = 8
@@ -50,30 +74,25 @@ grow_vertical = 2
 scale = Vector2(1.2, 1.2)
 max_value = 1.0
 step = 0.01
+value = 1.0
 fill_mode = 4
 texture_progress = SubResource("GradientTexture2D_yw30f")
 tint_under = Color(0, 0, 0, 1)
-tint_progress = Color(1, 0.26666668, 0, 1)
+tint_progress = Color(0.39999998, 0.49999988, 1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1731546626]
 texture = ExtResource("1_4flbx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=277333865]
-shape = SubResource("CircleShape2D_pyidc")
+[node name="Launch" type="AudioStreamPlayer2D" parent="." unique_id=336936974]
+stream = ExtResource("4_lvxji")
 
-[node name="Hitbox" type="Area2D" parent="." unique_id=1678425107]
+[node name="Release" type="AudioStreamPlayer2D" parent="." unique_id=1600960891]
+stream = ExtResource("4_0owmy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=2126041187]
-shape = SubResource("CircleShape2D_pq8q7")
+[node name="Collide" type="AudioStreamPlayer2D" parent="." unique_id=1324178518]
+stream = ExtResource("5_p47bc")
 
-[node name="LaunchAnchor" type="Node2D" parent="." unique_id=732655041]
+[node name="Win" type="AudioStreamPlayer2D" parent="." unique_id=965738550]
+stream = ExtResource("6_75vfm")
 
-[node name="Arrow" type="Sprite2D" parent="LaunchAnchor" unique_id=1041077544]
-visible = false
-position = Vector2(256, 0)
-scale = Vector2(1, 32)
-texture = SubResource("GradientTexture1D_g1dw6")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1721241199]
-zoom = Vector2(0.15, 0.15)
-position_smoothing_enabled = true
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1765158862]

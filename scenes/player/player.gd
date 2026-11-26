@@ -17,20 +17,31 @@ const RESPAWN: String = "Respawn" # Death => Normal
 @export var launch_anchor: Node2D
 @export var launch_arrow: Sprite2D
 @export var cooldown_bar: TextureProgressBar
+@export var launch_sfx: AudioStreamPlayer2D
+@export var release_sfx: AudioStreamPlayer2D
+@export var collide_sfx: AudioStreamPlayer2D
+@export var win_sfx: AudioStreamPlayer2D
+@export var camera: Camera2D
 
 @export_category("Params")
 @export var launch_power: float = 3000.0
 @export var cooldown_duration: float = 1.5
 @export var gravity: float = 3000.0
 @export var bounce_strength: float = 0.9
+@export var normal_zoom: float = 0.15
+@export var launch_zoom: float = 0.17
 
 var cooldown_time: float = 0.0
 var launch_dir: Vector2 = Vector2.UP
+
+var target_zoom: float
 
 func _ready():
 	_init_state_machine()
 	hitbox.body_entered.connect(on_hitbox_body_entered)
 	hitbox.area_entered.connect(on_hitbox_area_entered)
+	
+	target_zoom = normal_zoom
 
 func _init_state_machine():
 	hsm = LimboHSM.new()
@@ -59,6 +70,10 @@ func _init_state_machine():
 	hsm.initialize(self)
 	hsm.set_active(true)
 
+func _process(delta: float) -> void:
+	camera.zoom = lerp(camera.zoom, Vector2.ONE * target_zoom, 0.05)
+	print(camera.zoom)
+
 func default_update(delta: float):
 	velocity.y += gravity * delta
 	var collision = move_and_collide(velocity * delta)
@@ -74,8 +89,10 @@ func default_update(delta: float):
 
 func launch_enter():
 	Engine.time_scale = 0.25
+	target_zoom = launch_zoom
 	cooldown_bar.hide()
 	launch_arrow.show()
+	launch_sfx.play()
 
 func launch_update(delta: float):
 	velocity.y += gravity * delta
@@ -93,13 +110,18 @@ func launch_update(delta: float):
 
 func launch_exit():
 	Engine.time_scale = 1.0
+	target_zoom = normal_zoom
 	velocity = launch_dir * launch_power
 	cooldown_bar.show()
 	launch_arrow.hide()
+	release_sfx.play()	
 
 func on_hitbox_body_entered(body: Node2D):
 	if body.is_in_group("goal"):
 		GameManager.level_complete.emit()
+		win_sfx.play()
+	else:
+		collide_sfx.play()
 
 func on_hitbox_area_entered(area: Area2D):
 	if area.is_in_group("hazard"):

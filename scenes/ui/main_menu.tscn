@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://crbdkkkci1kvq"]
 
 [ext_resource type="Script" uid="uid://btexwnnd5syx3" path="res://scenes/ui/main_menu.gd" id="1_sl1te"]
+[ext_resource type="FontFile" uid="uid://xl16bo7y7yn4" path="res://assets/Outfit/static/Outfit-Black.ttf" id="2_m1kxf"]
+[ext_resource type="Theme" uid="uid://buvyinkjb47hh" path="res://assets/main_theme.tres" id="3_1g8jr"]
+[ext_resource type="Texture2D" uid="uid://dy8r72lx4beka" path="res://assets/main_menu_asset.png" id="4_m1kxf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1g8jr"]
+font = ExtResource("2_m1kxf")
+font_size = 128
 
 [node name="MainMenu" type="MarginContainer" unique_id=138268478 node_paths=PackedStringArray("play_button", "credits_button")]
 anchors_preset = 15
@@ -8,24 +15,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_top = 256
 script = ExtResource("1_sl1te")
 play_button = NodePath("HBoxContainer/VBoxContainer/VBoxContainer/Play")
 credits_button = NodePath("HBoxContainer/VBoxContainer/VBoxContainer/Credits")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=738985054]
 layout_mode = 2
+theme_override_constants/separation = 256
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1084735074]
 layout_mode = 2
 theme_override_constants/separation = 128
+alignment = 1
 
 [node name="Title" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1787206621]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 128
-text = "Slingshot"
+text = "Zlingshot"
+label_settings = SubResource("LabelSettings_1g8jr")
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=494302396]
@@ -40,6 +51,7 @@ custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
+theme = ExtResource("3_1g8jr")
 theme_override_font_sizes/font_size = 32
 text = "Play"
 metadata/_edit_use_anchors_ = true
@@ -49,6 +61,15 @@ custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
+theme = ExtResource("3_1g8jr")
 theme_override_font_sizes/font_size = 32
 text = "Credits"
 metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1434504290]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CenterContainer" unique_id=1341396078]
+layout_mode = 2
+texture = ExtResource("4_m1kxf")
+stretch_mode = 2

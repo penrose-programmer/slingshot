@@ -13,6 +13,7 @@ transition = NodePath("Transition/TransitionRect")
 [node name="UI" type="CanvasLayer" parent="." unique_id=113690549]
 
 [node name="Transition" type="CanvasLayer" parent="." unique_id=133952187]
+layer = 4096
 
 [node name="TransitionRect" type="ColorRect" parent="Transition" unique_id=1437637671]
 anchors_preset = 15
