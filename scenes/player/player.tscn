@@ -91,6 +91,7 @@ stream = ExtResource("4_0owmy")
 
 [node name="Collide" type="AudioStreamPlayer2D" parent="." unique_id=1324178518]
 stream = ExtResource("5_p47bc")
+volume_db = -20.0
 
 [node name="Win" type="AudioStreamPlayer2D" parent="." unique_id=965738550]
 stream = ExtResource("6_75vfm")
