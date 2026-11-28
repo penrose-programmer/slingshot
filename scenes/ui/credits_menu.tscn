@@ -1,14 +1,24 @@
 [gd_scene format=3 uid="uid://ekbccpca54xb"]
 
 [ext_resource type="Script" uid="uid://cgw6nguec170p" path="res://scenes/ui/credits_menu.gd" id="1_c6vh4"]
+[ext_resource type="Theme" uid="uid://buvyinkjb47hh" path="res://assets/main_theme.tres" id="2_0hdyb"]
+[ext_resource type="FontFile" uid="uid://xl16bo7y7yn4" path="res://assets/Outfit/static/Outfit-Black.ttf" id="3_eju1t"]
+[ext_resource type="FontFile" uid="uid://cq3fhyampcbdf" path="res://assets/Outfit/static/Outfit-Regular.ttf" id="4_5uo15"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oap8i"]
+font = ExtResource("3_eju1t")
 font_size = 128
-font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hdyb"]
+bg_color = Color(0.3137255, 0, 0.29411766, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_gcfse"]
+font = ExtResource("4_5uo15")
 font_size = 48
-font_color = Color(0, 0, 0, 1)
 
 [node name="Credits" type="CenterContainer" unique_id=1128154883 node_paths=PackedStringArray("return_button")]
 anchors_preset = 15
@@ -25,6 +35,7 @@ theme_override_constants/separation = 64
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=1734472632]
 layout_mode = 2
+theme = ExtResource("2_0hdyb")
 text = "Credits"
 label_settings = SubResource("LabelSettings_oap8i")
 horizontal_alignment = 1
@@ -32,21 +43,37 @@ horizontal_alignment = 1
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" unique_id=566070905]
 layout_mode = 2
 theme_override_constants/separation = 128
+alignment = 1
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=1687904516]
+[node name="Panel" type="Panel" parent="VBoxContainer/VBoxContainer2" unique_id=1225827051]
+custom_minimum_size = Vector2(1000, 400)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0hdyb")
 
-[node name="Penrose" type="Label" parent="VBoxContainer/VBoxContainer2/VBoxContainer3" unique_id=227052629]
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/VBoxContainer2/Panel" unique_id=892021554]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/VBoxContainer2/Panel/CenterContainer" unique_id=1687904516]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Penrose" type="Label" parent="VBoxContainer/VBoxContainer2/Panel/CenterContainer/VBoxContainer3" unique_id=227052629]
 layout_mode = 2
 text = "Penrose: Lead Developer"
 label_settings = SubResource("LabelSettings_gcfse")
 
-[node name="Atomic" type="Label" parent="VBoxContainer/VBoxContainer2/VBoxContainer3" unique_id=1923163774]
+[node name="Atomic" type="Label" parent="VBoxContainer/VBoxContainer2/Panel/CenterContainer/VBoxContainer3" unique_id=1923163774]
 layout_mode = 2
 text = "Atomic: Supporting Developer"
 label_settings = SubResource("LabelSettings_gcfse")
 
-[node name="Hystoria" type="Label" parent="VBoxContainer/VBoxContainer2/VBoxContainer3" unique_id=1868745487]
+[node name="Hystoria" type="Label" parent="VBoxContainer/VBoxContainer2/Panel/CenterContainer/VBoxContainer3" unique_id=1868745487]
 layout_mode = 2
 text = "Hystoria: Lead Artist"
 label_settings = SubResource("LabelSettings_gcfse")
@@ -55,5 +82,6 @@ label_settings = SubResource("LabelSettings_gcfse")
 custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("2_0hdyb")
 theme_override_font_sizes/font_size = 32
 text = "Return"
