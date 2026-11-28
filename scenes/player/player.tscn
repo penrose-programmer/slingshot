@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bfgioyq2kc6o0" path="res://assets/Launch.wav" id="4_lvxji"]
 [ext_resource type="AudioStream" uid="uid://ddpfailgk3h6f" path="res://assets/Collide.wav" id="5_p47bc"]
 [ext_resource type="AudioStream" uid="uid://dswt0q7xijqa6" path="res://assets/Win.wav" id="6_75vfm"]
+[ext_resource type="AudioStream" uid="uid://bebbbjg3i5aqv" path="res://assets/level_track.wav" id="8_qek5x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pyidc"]
 radius = 129.0155
@@ -95,5 +96,10 @@ volume_db = -20.0
 
 [node name="Win" type="AudioStreamPlayer2D" parent="." unique_id=965738550]
 stream = ExtResource("6_75vfm")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1987818293]
+stream = ExtResource("8_qek5x")
+volume_db = 10.0
+autoplay = true
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1765158862]

@@ -72,7 +72,6 @@ func _init_state_machine():
 
 func _process(delta: float) -> void:
 	camera.zoom = lerp(camera.zoom, Vector2.ONE * target_zoom, 0.05)
-	print(camera.zoom)
 
 func default_update(delta: float):
 	velocity.y += gravity * delta
